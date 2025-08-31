@@ -318,12 +318,8 @@
                     <li><a href="{{ route('ruqya') }}">Ruqyah</a></li>
                     <li><a href="{{ route('coaching') }}">Coaching</a></li>
                     <li><a href="{{ route('spiritual-direction') }}">Spiritual Direction</a></li>
-
-
-
-
                     <li><a href="{{ route('membership.index') }}">Membership Fees</a></li>
-                    <li><a href="#">Revivers</a></li>
+                    <li><a href="{{ route('revivers') }}">Revivers</a></li>
                     <li><a href="#">Membership FAQs</a></li>
                 </ul>
             </div>
