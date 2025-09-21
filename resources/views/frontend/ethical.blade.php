@@ -1,5 +1,7 @@
 @extends('layouts.frontend.app')
 
+@section('title', 'Ethical Standards')
+
 @section('content')
 
 <!-- About Section Start -->
@@ -642,3 +644,12 @@
 </section>
 <!-- Service Section End -->
 @endsection
+
+
+@push('css')
+    <style>
+        ul li {
+            color: #000 !important;
+        }
+    </style>
+@endpush

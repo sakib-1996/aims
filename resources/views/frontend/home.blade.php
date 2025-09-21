@@ -1,5 +1,7 @@
 @extends('layouts.frontend.app')
 
+@section('title', "Home")
+
 @section('content')
 
     <!-- Hero Section Start -->
@@ -51,7 +53,7 @@
             <div class="row text-center justify-content-center g-4 circle-icon">
                 <!-- Counselling -->
                 <div class="col-12 col-md-3">
-                    <a href="#" class="text-black">
+                    <a href="{{ route('counselling-training') }}" class="text-black">
                         <div class="info-box p-4">
                             <img src="{{ asset('images/info-icon-one.svg') }}" class="img-fluid mb-3"
                                 alt="Counselling Icon">
@@ -192,7 +194,7 @@
                 </div>
             </div>
 
-            <div class="workshop-wrapper odd">
+            <div class="workshop-wrapper odd d-none">
                 <div class="content-section" style="background-color: #f5a623">
                     <p class="tagline">Awards</p>
                     <h1>Mental Health Awards</h1>
@@ -299,7 +301,7 @@
     @endif
 
     <!-- Event Section Start -->
-    <x-frontend.section class="event-section">
+    <x-frontend.section class="event-section d-none">
 
         <div class="row mb-4 align-items-center">
             <div class="col-6 mb-4">

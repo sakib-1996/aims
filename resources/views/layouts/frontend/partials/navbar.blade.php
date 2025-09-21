@@ -315,15 +315,11 @@
                     <li><a href="{{ route('become-a-friend') }}">Become A Friend</a></li>
                     <li><a href="{{ route('organisation') }}">Organisation</a></li>
 
-                    <li><a href="{{ route('ruqya') }}">Ruqiyah</a></li>
+                    <li><a href="{{ route('ruqya') }}">Ruqyah</a></li>
                     <li><a href="{{ route('coaching') }}">Coaching</a></li>
                     <li><a href="{{ route('spiritual-direction') }}">Spiritual Direction</a></li>
-
-
-
-
                     <li><a href="{{ route('membership.index') }}">Membership Fees</a></li>
-                    <li><a href="#">Revivers</a></li>
+                    <li><a href="{{ route('revivers') }}">Revivers</a></li>
                     <li><a href="#">Membership FAQs</a></li>
                 </ul>
             </div>
@@ -337,9 +333,9 @@
                 </ul>
                 <h4 class="menu-title">Contact </h4>
                 <ul class="mobile-navbar-menu">
-                    <li><a href="#">Facebook </a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">YouTube</a></li>
+                    <li><a target="_blank" href="https://www.facebook.com/aimsonlinedirectory">Facebook </a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/aimsdirectory/">Instagram</a></li>
+                    <li><a target="_blank" href="#">YouTube</a></li>
                 </ul>
                 <h4 class="menu-title">What’s On </h4>
                 <ul class="mobile-navbar-menu">
@@ -355,12 +351,12 @@
                 </ul>
                 <h4 class="menu-title">About</h4>
                 <ul class="mobile-navbar-menu">
+                    <li><a href="{{ route('about.index') }}">About us</a></li>
                     <li><a href="{{ route('team') }}">Team</a></li>
                     <li><a href="{{ route('advisors') }}">Advisors</a></li>
                     <li><a href="{{ route('ambassadors') }}">Global Ambassadors </a></li>
                     <li><a href="{{ route('ethical.index') }}">Ethical Standards</a></li>
                 </ul>
-
 
             </div>
 
