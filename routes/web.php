@@ -75,6 +75,13 @@ Route::view('cookie-consent', 'frontend.cookie_consent')->name('cookie-consent')
 Route::view('copyright-notice', 'frontend.copyright_notice')->name('copyright-notice');
 Route::view('data-retention-policy', 'frontend.data_retention_policy')->name('data-retention-policy');
 
+//  ⁠How to make a complaint page
+Route::view('how-to-make-complaint', 'frontend.complaint')->name('how-to-make-complaint');
+
+
+
+
+
 
 
 

@@ -203,6 +203,8 @@
                                     Become an Ambassador</a>
                             </li>
                             <li><a href="{{ route('ethical.index') }}" class="footer__link">Ethical Framework</a></li>
+                            <li><a href="{{ route('how-to-make-complaint') }}" class="footer__link"> ⁠How to make a
+                                    compaint</a></li>
                         </ul>
                     </div>
 
@@ -212,7 +214,8 @@
                         <ul class="footer__list">
                             <li><a href="{{ route('page.details', 'privacy-policy') }}" class="footer__link">Privacy
                                     policy</a></li>
-                            <li><a href="{{ route('data-retention-policy') }}" class="footer__link">Data retention policy</a></li>
+                            <li><a href="{{ route('data-retention-policy') }}" class="footer__link">Data retention
+                                    policy</a></li>
                             <li><a href="{{ route('cookie-consent') }}" class="footer__link">Cookie consent</a></li>
                             <li><a href="{{ route('copyright-notice') }}" class="footer__link">Copyright</a></li>
                         </ul>
@@ -223,14 +226,13 @@
                         <h5 class="footer__title">Follow us on:</h5>
                         <div class="d-flex gap-3">
                             <a href="https://www.facebook.com/aimsonlinedirectory" target="_blank"><img
-                                    src="{{ asset('icon/facebook.svg') }}"
-                                    alt="Facebook" class="footer__social-icon"></a>
-                            <a href="#" target="_blank"><img
-                                    src="{{ asset('icon/x-icon.svg') }}" alt="X"
+                                    src="{{ asset('icon/facebook.svg') }}" alt="Facebook"
+                                    class="footer__social-icon"></a>
+                            <a href="#" target="_blank"><img src="{{ asset('icon/x-icon.svg') }}" alt="X"
                                     class="footer__social-icon"></a>
                             <a href="https://www.instagram.com/aimsdirectory/" target="_blank"><img
-                                    src="{{ asset('icon/instagram.svg') }}"
-                                    alt="Instagram" class="footer__social-icon"></a>
+                                    src="{{ asset('icon/instagram.svg') }}" alt="Instagram"
+                                    class="footer__social-icon"></a>
                         </div>
                     </div>
                 </div>
