@@ -228,7 +228,7 @@
                             <a href="https://www.facebook.com/aimsonlinedirectory" target="_blank"><img
                                     src="{{ asset('icon/facebook.svg') }}" alt="Facebook"
                                     class="footer__social-icon"></a>
-                            <a href="#" target="_blank"><img src="{{ asset('icon/x-icon.svg') }}" alt="X"
+                            <a href="#" target="_blank"><img src="{{ asset('icon/youtube.png') }}" alt="X"
                                     class="footer__social-icon"></a>
                             <a href="https://www.instagram.com/aimsdirectory/" target="_blank"><img
                                     src="{{ asset('icon/instagram.svg') }}" alt="Instagram"
