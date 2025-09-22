@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MemberMailController;
 use App\Http\Controllers\Staff\ArticleCategoryController;
 use App\Http\Controllers\Staff\ArticleController;
 use App\Http\Controllers\Staff\AuthController;
@@ -47,10 +48,10 @@ Route::middleware(['guest:staff'])->group(function () {
     Route::post('login', [AuthController::class, 'login'])->name('login');
 
     // if (config('app.env') == 'local') {
-        Route::get('/{id}/login', function ($id) {
-            Auth::guard('staff')->loginUsingId($id, true);
-            return back();
-        })->name('passwordless.login');
+    Route::get('/{id}/login', function ($id) {
+        Auth::guard('staff')->loginUsingId($id, true);
+        return back();
+    })->name('passwordless.login');
     // }
 });
 
@@ -75,6 +76,10 @@ Route::middleware(['auth:staff', 'permission'])->group(function () {
     });
 
     Route::resource('therapist', TherapistController::class);
+    Route::post('/therapist/send-mail', [MemberMailController::class, 'sendMail'])->name('therapist.sendMail');
+    Route::get('/therapist/send-mail/log', [MemberMailController::class, 'sendMailLog'])->name('therapist.sendMail.log');
+
+
     Route::resource('membership-plan', MembershipPlanController::class);
     Route::resource('renew', RenewController::class);
 
@@ -129,5 +134,4 @@ Route::middleware(['auth:staff', 'permission'])->group(function () {
         Route::get('password', 'showPasswordUpdateForm')->name('password.index');
         Route::put('password', 'updatePassword')->name('password.update');
     });
-
 });

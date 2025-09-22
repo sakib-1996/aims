@@ -217,7 +217,7 @@
                             <li><a href="{{ route('data-retention-policy') }}" class="footer__link">Data retention
                                     policy</a></li>
                             <li><a href="{{ route('cookie-consent') }}" class="footer__link">Cookie consent</a></li>
-                            <li><a href="{{ route('copyright-notice') }}" class="footer__link">Copyright</a></li>
+                            <li><a href="{{ route('home') }}" class="footer__link">Copyright</a></li>
                         </ul>
                     </div>
 

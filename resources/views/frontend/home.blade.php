@@ -1,6 +1,6 @@
 @extends('layouts.frontend.app')
 
-@section('title', "Home")
+@section('title', 'Home')
 
 @section('content')
 
@@ -194,7 +194,7 @@
                 </div>
             </div>
 
-            <div class="workshop-wrapper odd d-none">
+            <div class="workshop-wrapper odd">
                 <div class="content-section" style="background-color: #f5a623">
                     <p class="tagline">Awards</p>
                     <h1>Mental Health Awards</h1>

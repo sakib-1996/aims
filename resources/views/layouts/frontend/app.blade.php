@@ -7,10 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- SEO Meta -->
     <meta name="keywords" content="@yield('meta_keywords', 'aims, aims website, aims, education, education website, online study, online, education platform')">
-    <meta name="description" content="@yield('meta_description', 'Home page of '.url()->current())">
-    <link rel="canonical" href="{{url()->current()}}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="description" content="@yield('meta_description', 'Home page of ' . url()->current())">
+    <link rel="canonical" href="{{ url()->current() }}" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:title" content="@yield('title', 'Online education') – {{ config('app.name') }}">
+    <meta property="og:description" content="@yield('meta_description', 'Home page of ' . url()->current())">
+    <meta property="og:image" content="{{ uploadedFile(setting('favicon')) }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Online education') – {{ config('app.name') }}">
+    <meta name="twitter:description" content="@yield('meta_description', 'Home page of ' . url()->current())">
+    <meta name="twitter:image" content="{{ uploadedFile(setting('favicon')) }}">
+
     <!--favicon-->
     <link rel="icon" href="{{ uploadedFile(setting('favicon')) }}" type="image/png" />
 
@@ -19,8 +33,8 @@
     @vite(['resources/js/app.js'])
 
     @stack('css')
-
 </head>
+
 
 <body>
 

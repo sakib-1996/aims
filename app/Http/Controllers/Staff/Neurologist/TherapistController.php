@@ -24,14 +24,36 @@ class TherapistController extends Controller
 
             return DataTables::eloquent($therapists)
                 ->addIndexColumn()
-                ->filter(fn ($query) => $query->approved(), true)
-                ->addColumn('membership_expire', fn ($data) => formatDate($data->membership_expire))
+                ->filter(fn($query) => $query->approved(), true)
+                ->addColumn('membership_expire', fn($data) => formatDate($data->membership_expire))
                 ->addColumn('action', function ($data) {
-                    return $this->buttonGroup([
-                        ['url' => route('staff.therapist.show', $data->id), 'type' => 'show', 'id' => false, 'can' => 'show_therapist'],
-                        ['url' => route('staff.therapist.edit', $data->id), 'type' => 'edit', 'id' => false, 'can' => 'edit_therapist'],
-                        ['url' => route('staff.therapist.destroy', $data->id), 'type' => 'delete', 'can' => 'delete_therapist'],
-                    ]);
+                    return '
+                        <div class="btn-group" role="group">
+
+                            <a href="' . route('staff.therapist.show', $data->id) . '"
+                            class="btn btn-sm btn-info" title="View">
+                            <i class="bx bxs-show"></i>
+                            </a>
+
+                            <a href="' . route('staff.therapist.edit', $data->id) . '"
+                            class="btn btn-sm btn-warning" title="Edit">
+                            <i class="bx bxs-edit"></i>
+                            </a>
+
+                            <button type="button" class="btn btn-sm btn-danger delete-btn"
+                                data-url="' . route('staff.therapist.destroy', $data->id) . '"
+                                title="Delete">
+                                <i class="bx bxs-trash"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-sm btn-primary send-mail-btn"
+                               onclick="openSendMailModal(\'' . $data->email . '\')"
+                                title="Send Mail">
+                                <i class="bx bx-mail-send"></i>
+                            </button>
+
+                        </div>
+                    ';
                 })
                 ->rawColumns(['action', 'payment_done'])
                 ->toJson();
@@ -42,6 +64,7 @@ class TherapistController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * bx bxs-show, bx bxs-edit ,bx bxs-trash
      */
     public function create()
     {
@@ -158,7 +181,7 @@ class TherapistController extends Controller
         $userInput['currency_id'] = $request->currency;
         $userInput['username'] = generateSlug("$request->first_name $request->last_name");
         if (User::where('id', '!=', $therapist->user->id)->where('username', $userInput['username'])->first()) {
-            $userInput['username'] = $userInput['username'].rand();
+            $userInput['username'] = $userInput['username'] . rand();
         }
 
         $input = $request->all();
@@ -178,8 +201,7 @@ class TherapistController extends Controller
                 array_push($documents, $uploadedDoc);
             }
             $input['documents'] = json_encode($documents);
-        }
-        else {
+        } else {
             $input['documents'] = $therapist->documents;
         }
 
