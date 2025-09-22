@@ -76,8 +76,8 @@ Route::middleware(['auth:staff', 'permission'])->group(function () {
     });
 
     Route::resource('therapist', TherapistController::class);
-    Route::post('/therapist/send-mail', [MemberMailController::class, 'sendMail'])->name('therapist.sendMail');
-    Route::get('/therapist/send-mail/log', [MemberMailController::class, 'sendMailLog'])->name('therapist.sendMail.log');
+    Route::post('/send-mail', [MemberMailController::class, 'sendMail'])->name('therapist.sendMail');
+    Route::get('/send-mail/log', [MemberMailController::class, 'sendMailLog'])->name('therapist.sendMail.log');
 
 
     Route::resource('membership-plan', MembershipPlanController::class);

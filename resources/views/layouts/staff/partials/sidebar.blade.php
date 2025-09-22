@@ -69,8 +69,7 @@
         @can('show_event')
             <x-staff.nav-link name="events" startUrl="admin/event*" :url="route('staff.event.index')" icon="bx-calendar-event" />
         @endcan
-        <x-staff.nav-link name="email logs" startUrl="admin/therapist/send-mail/log'" :url="route('staff.therapist.sendMail.log')"
-            icon="bx bx-mail-send" />
+        <x-staff.nav-link name="email logs" startUrl="admin/send-mail/log'" :url="route('staff.therapist.sendMail.log')" icon="bx bx-mail-send" />
 
         <x-staff.nav-link name="insights " startUrl="admin/insight*" icon="bx-news" :items="[
             [
