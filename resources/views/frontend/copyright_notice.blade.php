@@ -39,13 +39,14 @@
                             obtain information and contact details of mental health professionals, supervisors, or
                             organisations in order to access the services they offer.</p>
 
-                        <p>Any information you provide through <a target="_blank" href="https://aims-uk.org">aims-uk.org</a> is treated
+                        <p>Any information you provide through <a href="{{ route('home') }}">aimsonline.org</a> is treated
                             confidentially and will not be shared with third parties without your consent.</p>
                         <p>The AIMS logo may only be used by individual members and affiliate members to indicate active
                             membership. It must not be used to suggest AIMS approval, verification, or endorsement of
                             events, training, publications, or other materials unless explicit, prior written permission has
                             been granted by AIMS. The organisation reserves the right to refuse such permission.</p>
-                        <p>Breaches of these terms will be taken seriously under AIMS regulations and may lead to disciplinary action.</p>
+                        <p>Breaches of these terms will be taken seriously under AIMS regulations and may lead to
+                            disciplinary action.</p>
 
                     </div>
                 </div>

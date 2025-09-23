@@ -85,6 +85,10 @@
 
 @push('css')
     <style>
+        li {
+            margin-top: 18px;
+        }
+
         .nav-link:hover:not(.active):not(.disabled) {
             background-color: #f8d7da;
             color: #721c24;
@@ -93,8 +97,7 @@
         .nav-link.active {
             font-weight: bold;
         }
-    </style>
-    <style>
+
         .content-wrapper {
             display: flex;
             gap: 30px;

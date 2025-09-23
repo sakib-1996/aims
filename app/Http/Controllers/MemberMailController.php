@@ -67,9 +67,21 @@ class MemberMailController extends Controller
                 ->addColumn('recipient_email', fn($data) => $data->recipient_email)
                 ->addColumn('subject', fn($data) => $data->subject)
                 ->addColumn('message', fn($data) => $data->message) // add this
-                ->addColumn('status', fn($data) => ucfirst($data->status))
+                ->addColumn('status', function ($data) {
+                    return $data->status == 'success' ? '<span class="badge bg-success">Success</span>' : '<span class="badge bg-danger">Failed</span>';
+                })
                 ->addColumn('created_at', fn($data) => formatDate($data->created_at, 'd M, Y h:i A'))
-                ->rawColumns(['recipient_email', 'subject', 'message'])
+                ->addColumn('view', function ($data) {
+                    $message = htmlspecialchars($data->message, ENT_QUOTES, 'UTF-8');
+                    return '<button class="btn btn-sm btn-primary view-mail-log"
+                            data-recipient-email="' . e($data->recipient_email) . '"
+                            data-subject="' . e($data->subject) . '"
+                            data-message="' . $message . '">
+                            <i class="bx bx-show"></i>
+                        </button>';
+                })
+
+                ->rawColumns(['recipient_email', 'subject', 'message', 'status', 'view'])
                 ->toJson();
         }
 

@@ -357,6 +357,7 @@
                     <li><a href="{{ route('advisors') }}">Advisors</a></li>
                     <li><a href="{{ route('ambassadors') }}">Global Ambassadors </a></li>
                     <li><a href="{{ route('ethical.index') }}">Ethical Standards</a></li>
+                    <li><a href="{{ route('collaborations') }}">Collaborations</a></li>
                 </ul>
 
             </div>
