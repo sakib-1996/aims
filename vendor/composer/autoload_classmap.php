@@ -6,6 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Anhskohbo\\NoCaptcha\\Facades\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/Facades/NoCaptcha.php',
+    'Anhskohbo\\NoCaptcha\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptcha.php',
+    'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
     'App\\Actions\\Fortify\\CreateNewUser' => $baseDir . '/app/Actions/Fortify/CreateNewUser.php',
     'App\\Actions\\Fortify\\PasswordValidationRules' => $baseDir . '/app/Actions/Fortify/PasswordValidationRules.php',
     'App\\Actions\\Fortify\\ResetUserPassword' => $baseDir . '/app/Actions/Fortify/ResetUserPassword.php',
@@ -13,6 +16,7 @@ return array(
     'App\\Actions\\Fortify\\UpdateUserProfileInformation' => $baseDir . '/app/Actions/Fortify/UpdateUserProfileInformation.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\ContectUsController' => $baseDir . '/app/Http/Controllers/ContectUsController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Frontend\\AboutController' => $baseDir . '/app/Http/Controllers/Frontend/AboutController.php',
     'App\\Http\\Controllers\\Frontend\\AdvisorController' => $baseDir . '/app/Http/Controllers/Frontend/AdvisorController.php',
@@ -45,6 +49,7 @@ return array(
     'App\\Http\\Controllers\\Frontend\\SocialAuthController' => $baseDir . '/app/Http/Controllers/Frontend/SocialAuthController.php',
     'App\\Http\\Controllers\\Frontend\\SubscribeController' => $baseDir . '/app/Http/Controllers/Frontend/SubscribeController.php',
     'App\\Http\\Controllers\\Frontend\\TeamController' => $baseDir . '/app/Http/Controllers/Frontend/TeamController.php',
+    'App\\Http\\Controllers\\MemberMailController' => $baseDir . '/app/Http/Controllers/MemberMailController.php',
     'App\\Http\\Controllers\\Staff\\ArticleCategoryController' => $baseDir . '/app/Http/Controllers/Staff/ArticleCategoryController.php',
     'App\\Http\\Controllers\\Staff\\ArticleController' => $baseDir . '/app/Http/Controllers/Staff/ArticleController.php',
     'App\\Http\\Controllers\\Staff\\AuthController' => $baseDir . '/app/Http/Controllers/Staff/AuthController.php',
@@ -143,6 +148,7 @@ return array(
     'App\\Models\\Event' => $baseDir . '/app/Models/Event.php',
     'App\\Models\\Format' => $baseDir . '/app/Models/Format.php',
     'App\\Models\\Language' => $baseDir . '/app/Models/Language.php',
+    'App\\Models\\MailLog' => $baseDir . '/app/Models/MailLog.php',
     'App\\Models\\MembershipPlan' => $baseDir . '/app/Models/MembershipPlan.php',
     'App\\Models\\Module' => $baseDir . '/app/Models/Module.php',
     'App\\Models\\OnlinePlatform' => $baseDir . '/app/Models/OnlinePlatform.php',

@@ -77,6 +77,7 @@ Route::view('data-retention-policy', 'frontend.data_retention_policy')->name('da
 
 //  ⁠How to make a complaint page
 Route::view('how-to-make-complaint', 'frontend.complaint')->name('how-to-make-complaint');
+Route::view('collaborations', 'frontend.Collaborations')->name('Collaborations');
 
 
 

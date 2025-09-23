@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactUs;
 use App\Models\MailLog;
 use App\Models\Therapist;
 use Illuminate\Http\Request;
@@ -73,5 +74,21 @@ class MemberMailController extends Controller
         }
 
         return view('staff.therapist.mail_log');
+    }
+
+    public function whoWantToContact()
+    {
+        if (request()->ajax()) {
+            $mailLogs = ContactUs::query();
+
+            return DataTables::eloquent($mailLogs)
+                ->addIndexColumn()
+                ->addIndexColumn()
+                ->editColumn('created_at', fn($row) => $row->created_at->format('d M, Y h:i A'))
+                ->toJson();
+        }
+
+
+        return view('staff.therapist.who-want-to-contact');
     }
 }

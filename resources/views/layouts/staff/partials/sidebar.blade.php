@@ -70,6 +70,8 @@
             <x-staff.nav-link name="events" startUrl="admin/event*" :url="route('staff.event.index')" icon="bx-calendar-event" />
         @endcan
         <x-staff.nav-link name="email logs" startUrl="admin/send-mail/log'" :url="route('staff.therapist.sendMail.log')" icon="bx bx-mail-send" />
+        <x-staff.nav-link name="who want to contact" startUrl="admin/who-want-to-contact" :url="route('staff.therapist.whoWantToContact')"
+            icon="bx bx-phone-call" />
 
         <x-staff.nav-link name="insights " startUrl="admin/insight*" icon="bx-news" :items="[
             [

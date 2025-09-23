@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
+use App\Models\ContactUs;
 use App\Rules\RecaptchaRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -28,13 +29,17 @@ class ContactController extends Controller
         ]);
 
         try {
-            Mail::to($request->email)->send(new ContactMail);
-
+            // Mail::to($request->email)->send(new ContactMail);
+            $contact =  ContactUs::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'message' => $request->details,
+            ]);
             return response()->json([
                 'message' => 'Your information submitted successfully',
             ]);
-
         } catch (\Exception $e) {
+            dd($e->getMessage());
             throw $e;
         }
     }
