@@ -59,7 +59,7 @@
         <!-- Footer Section End -->
 
     </main>
-
+    @include('cookie-consent::index')
     <div class="back-top">
         <img src="{{ asset('build/assets/frontend/images/icons/arrow-up.svg') }}" alt="">
     </div>

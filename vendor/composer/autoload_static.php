@@ -112,6 +112,7 @@ class ComposerStaticInitcc0a02b943f9e4a8a8d6c74852be2027
             'Spatie\\LaravelIgnition\\' => 23,
             'Spatie\\Ignition\\' => 16,
             'Spatie\\FlareClient\\' => 19,
+            'Spatie\\CookieConsent\\' => 21,
             'Spatie\\Backtrace\\' => 17,
             'Sabberworm\\CSS\\' => 15,
         ),
@@ -421,6 +422,10 @@ class ComposerStaticInitcc0a02b943f9e4a8a8d6c74852be2027
         'Spatie\\FlareClient\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/flare-client-php/src',
+        ),
+        'Spatie\\CookieConsent\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/spatie/laravel-cookie-consent/src',
         ),
         'Spatie\\Backtrace\\' => 
         array (
@@ -6914,6 +6919,8 @@ class ComposerStaticInitcc0a02b943f9e4a8a8d6c74852be2027
         'Spatie\\Backtrace\\CodeSnippet' => __DIR__ . '/..' . '/spatie/backtrace/src/CodeSnippet.php',
         'Spatie\\Backtrace\\File' => __DIR__ . '/..' . '/spatie/backtrace/src/File.php',
         'Spatie\\Backtrace\\Frame' => __DIR__ . '/..' . '/spatie/backtrace/src/Frame.php',
+        'Spatie\\CookieConsent\\CookieConsentMiddleware' => __DIR__ . '/..' . '/spatie/laravel-cookie-consent/src/CookieConsentMiddleware.php',
+        'Spatie\\CookieConsent\\CookieConsentServiceProvider' => __DIR__ . '/..' . '/spatie/laravel-cookie-consent/src/CookieConsentServiceProvider.php',
         'Spatie\\FlareClient\\Api' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Api.php',
         'Spatie\\FlareClient\\Concerns\\HasContext' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Concerns/HasContext.php',
         'Spatie\\FlareClient\\Concerns\\UsesTime' => __DIR__ . '/..' . '/spatie/flare-client-php/src/Concerns/UsesTime.php',

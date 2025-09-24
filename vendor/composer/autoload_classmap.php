@@ -6185,6 +6185,8 @@ return array(
     'Spatie\\Backtrace\\CodeSnippet' => $vendorDir . '/spatie/backtrace/src/CodeSnippet.php',
     'Spatie\\Backtrace\\File' => $vendorDir . '/spatie/backtrace/src/File.php',
     'Spatie\\Backtrace\\Frame' => $vendorDir . '/spatie/backtrace/src/Frame.php',
+    'Spatie\\CookieConsent\\CookieConsentMiddleware' => $vendorDir . '/spatie/laravel-cookie-consent/src/CookieConsentMiddleware.php',
+    'Spatie\\CookieConsent\\CookieConsentServiceProvider' => $vendorDir . '/spatie/laravel-cookie-consent/src/CookieConsentServiceProvider.php',
     'Spatie\\FlareClient\\Api' => $vendorDir . '/spatie/flare-client-php/src/Api.php',
     'Spatie\\FlareClient\\Concerns\\HasContext' => $vendorDir . '/spatie/flare-client-php/src/Concerns/HasContext.php',
     'Spatie\\FlareClient\\Concerns\\UsesTime' => $vendorDir . '/spatie/flare-client-php/src/Concerns/UsesTime.php',

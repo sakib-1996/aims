@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '41b5d5c9cc5047321a812618ba6f4c11e1c24064',
+        'reference' => '35309ff054bcede62bcb2fc3ea377b27c5cc9a73',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -508,7 +508,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '41b5d5c9cc5047321a812618ba6f4c11e1c24064',
+            'reference' => '35309ff054bcede62bcb2fc3ea377b27c5cc9a73',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1231,6 +1231,15 @@
             'install_path' => __DIR__ . '/../spatie/ignition',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'spatie/laravel-cookie-consent' => array(
+            'pretty_version' => '3.3.3',
+            'version' => '3.3.3.0',
+            'reference' => 'fa375d4c9cae8745137ec3249e1b8e35d911963a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../spatie/laravel-cookie-consent',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'spatie/laravel-ignition' => array(
             'pretty_version' => '2.4.2',
