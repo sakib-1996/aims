@@ -1,154 +1,195 @@
 <div class="js-cookie-consent cookie-consent-popup hidden" id="cookieConsentPopup">
     <div class="cookie-popup-content">
         <h4 class="cookie-popup-title">Privacy Settings</h4>
-        <p class="cookie-popup-message">{!! trans('cookie-consent::texts.message') !!}</p>
-        <div class="cookie-popup-actions">
-            <button class="js-cookie-consent-agree btn-agree">
-                {{ trans('cookie-consent::texts.agree') }}
-            </button>
+        <p class="cookie-popup-message">
+            This site uses third-party website tracking technologies to provide and continually improve your experience
+            on our website and our services. You may revoke or change your consent at any time.
+        </p>
+
+        <!-- Toggles -->
+        <div class="cookie-settings">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" data-type="marketing" role="switch" id="marketing">
+                <label class="form-check-label switch-label" for="marketing">Marketing</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" data-type="functional" role="switch" id="functional"
+                    checked>
+                <label class="form-check-label switch-label" for="functional">Functional</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" data-type="essential" role="switch" id="essential"
+                    disabled checked>
+                <label class="form-check-label switch-label" for="essential">Essential</label>
+            </div>
         </div>
+
+        <div class="text-center mt-5">
+            <div class="cookie-popup-actions">
+                <button class="btn-secondary js-cookie-save m-1">Save Settings</button>
+                <button class="btn-deny js-cookie-deny m-1">Deny</button>
+                <button class="btn-accept js-cookie-accept m-1">Accept All</button>
+            </div>
+        </div>
+
     </div>
 </div>
+
 <style>
     .cookie-consent-popup {
-        /* --- MODIFICATION: Changed positioning to bottom-center --- */
         position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        /* Used for horizontal centering */
-
-        /* --- MODIFICATION: Modern, neutral color scheme & design --- */
-        background: #ffffff;
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        max-width: 450px;
-        width: 90%;
-        z-index: 9999;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 2px solid #f1f1f1;
+        box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
         padding: 25px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         text-align: left;
-        /* Better for readability */
+        z-index: 9999;
 
-        /* --- MODIFICATION: Smoother slide-in and fade-in animation --- */
         opacity: 0;
         visibility: hidden;
-        transform: translate(-50%, 20px);
-        /* Start slightly lower */
+        transform: translateY(100%);
         transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
     }
 
-    /* State when the popup is visible */
     .cookie-consent-popup.show {
         opacity: 1;
         visibility: visible;
-        transform: translate(-50%, 0);
-        /* End at the final position */
+        transform: translateY(0);
+        border-radius: 15px 15px 0 0;
     }
 
-    /* Remove the initial 'hidden' class style if it conflicts */
     .hidden {
         display: block;
-        /* Overriding any potential display:none */
     }
 
     .cookie-popup-title {
-        /* --- MODIFICATION: Improved typography --- */
-        font-size: 1.15rem;
+        font-size: 1.2rem;
         font-weight: 600;
-        margin-top: 0;
         margin-bottom: 10px;
         color: #2d3748;
-        /* Dark grey for better contrast */
+    }
+
+    .form-switch .form-check-input {
+        width: 3rem;
+        height: 1.5rem;
+    }
+
+    .switch-label {
+        font-size: 20px !important;
+        margin-left: 25px !important;
     }
 
     .cookie-popup-message {
         font-size: 0.9rem;
         color: #4a5568;
-        /* Softer grey for body text */
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         line-height: 1.6;
     }
 
-    .cookie-popup-actions {
-        text-align: right;
-        /* Align button to the right */
+    /* Layout in one row */
+
+    .cookie-settings {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .cookie-popup-actions .btn-agree {
-        /* --- MODIFICATION: Professional button styling --- */
-        background-color: #3182ce;
-        /* A professional blue */
-        color: #fff;
-        padding: 10px 24px;
+    .cookie-settings label {
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+
+    /* Buttons */
+    .cookie-popup-actions button {
+        padding: 10px 20px;
         border-radius: 6px;
-        font-weight: 500;
         border: none;
         cursor: pointer;
-        transition: background-color 0.2s ease, transform 0.2s ease;
+        font-weight: 500;
+        transition: 0.2s;
     }
 
-    .cookie-popup-actions .btn-agree:hover {
-        background-color: #2b6cb0;
-        /* Darker shade on hover */
-        transform: translateY(-2px);
-        /* Slight lift effect */
+    .btn-secondary {
+        background: #f1f1f1;
+        color: #333;
     }
 
-    /* --- MODIFICATION: Better responsiveness for mobile --- */
-    @media (max-width: 480px) {
-        .cookie-consent-popup {
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            border-radius: 0;
-            transform: translateX(0);
-            /* Reset transform */
-        }
+    .btn-secondary:hover {
+        background: #e2e2e2;
+    }
 
-        .cookie-consent-popup.show {
-            transform: translateY(0);
-        }
+    .btn-deny,
+    .btn-accept {
+        background: #ff9800;
+        color: #fff;
+    }
 
-        .cookie-consent-popup {
-            transform: translateY(100%);
-            /* Start off-screen at the bottom */
+    .btn-deny:hover,
+    .btn-accept:hover {
+        background: #f57c00;
+    }
+
+    .cookie-links {
+        font-size: 0.85rem;
+        margin-left: auto;
+    }
+
+
+    /* Responsive: stack on small screens */
+    @media (max-width: 768px) {
+        .cookie-popup-content {
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         .cookie-popup-actions {
-            text-align: center;
+            width: 100%;
+            justify-content: space-between;
         }
 
-        .btn-agree {
-            width: 100%;
+        .btn-accept {
+            flex: 1;
         }
     }
 </style>
+
 <script>
     window.addEventListener('load', function() {
         const popup = document.getElementById('cookieConsentPopup');
 
-        // Show popup if cookie not set
         if (!document.cookie.includes('cookie_consent=yes')) {
             popup.classList.remove('hidden');
-
-            // Small delay to trigger CSS transition
-            setTimeout(() => {
-                popup.classList.add('show');
-            }, 100);
+            setTimeout(() => popup.classList.add('show'), 100);
         }
 
-        // Agree button click
-        document.querySelectorAll('.js-cookie-consent-agree').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                document.cookie = "cookie_consent=yes; path=/; max-age=" + 60 * 60 * 24 * 365;
+        document.querySelector('.js-cookie-accept').addEventListener('click', () => {
+            document.cookie = "cookie_consent=yes; path=/; max-age=" + 60 * 60 * 24 * 365;
+            popup.classList.remove('show');
+        });
 
-                // Animate hide
-                popup.classList.remove('show');
-                // The original 'hidden' class can be re-added after animation if needed,
-                // but visibility:hidden in the CSS already handles this.
+        document.querySelector('.js-cookie-deny').addEventListener('click', () => {
+            document.cookie = "cookie_consent=no; path=/; max-age=" + 60 * 60 * 24 * 365;
+            popup.classList.remove('show');
+        });
+
+        document.querySelector('.js-cookie-save').addEventListener('click', () => {
+            let settings = {};
+            document.querySelectorAll('.cookie-toggle').forEach(toggle => {
+                settings[toggle.dataset.type] = toggle.checked;
             });
+            document.cookie = "cookie_settings=" + JSON.stringify(settings) + "; path=/; max-age=" +
+                60 * 60 * 24 * 365;
+            popup.classList.remove('show');
         });
     });
 </script>
